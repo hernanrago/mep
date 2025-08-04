@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AL30 MEP Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    .result { font-size: 1.2em; margin-top: 20px; }
+    input, button { padding: 10px; font-size: 1em; width: 100%; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>AL30 MEP Calculator</h1>
+  <label for="token">Bearer Token:</label>
+  <input type="text" id="token" placeholder="Paste your token here" />
+  <button onclick="calculateMEP()">Calculate MEP</button>
+
+  <div id="result" class="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
