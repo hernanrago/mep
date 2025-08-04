@@ -1,7 +1,6 @@
 const username = "hernanrago@msn.com";
-const password = "Cendra.2025";
 
-async function getToken() {
+async function getToken(password) {
   const url = "https://api.invertironline.com/token";
 
   const formData = new URLSearchParams();
@@ -44,11 +43,18 @@ function applyFees(value, commission = 0, market = 0, operation = "add") {
 }
 
 async function calculateMEP() {
+  const password = document.getElementById("password").value.trim();
   const resultDiv = document.getElementById("result");
+
+  if (!password) {
+    resultDiv.textContent = "Please enter your password.";
+    return;
+  }
+
   resultDiv.textContent = "Authenticating...";
 
   try {
-    const token = await getToken();
+    const token = await getToken(password);
     resultDiv.textContent = "Fetching quotes...";
 
     const [al30d, al30] = await Promise.all([
